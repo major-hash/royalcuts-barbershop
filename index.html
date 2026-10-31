@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Royal Cuts Barbershop – Book Us</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#080808;--surface:#141414;--text:#f6f1e3;--muted:#a79f8a;--gold:#d4af37;--gold2:#f1d27a;--border:#2a2415;--head:"Oswald","Arial Narrow",Impact,sans-serif;--body:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;padding-bottom:84px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.top{background:linear-gradient(rgba(8,8,8,.7),rgba(8,8,8,.88)),url("hero.jpg") center/cover no-repeat,var(--bg);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid var(--border)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:var(--head);font-weight:700;font-size:24px;letter-spacing:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#0a0a0a;font-family:var(--body);font-weight:600;letter-spacing:.5px;padding:13px 26px;border-radius:999px}
+.btn.ghost{background:transparent;color:var(--gold);border:2px solid var(--gold)}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero{text-align:center;padding:72px 0 80px}
+.tag{color:var(--gold);font-weight:500;letter-spacing:4px;font-size:12px;text-transform:uppercase}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(44px,10vw,84px);line-height:1.02;letter-spacing:1px;text-transform:uppercase;margin:16px 0 18px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#d6cfbc;max-width:500px;margin:0 auto 32px;font-size:17px}
+h2{font-family:var(--head);font-weight:700;text-align:center;font-size:clamp(28px,5vw,40px);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:8px 0 6px}
+.sub{text-align:center;color:var(--muted);margin-bottom:26px}
+section.block{margin:52px 0}
+.list{max-width:560px;margin:0 auto 28px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:8px 24px}
+.row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border)}
+.row:last-child{border-bottom:none}
+.row::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--gold)}
+.row h3{font-family:var(--head);font-weight:500;font-size:19px;letter-spacing:1px;text-transform:uppercase}
+.row p{color:var(--muted);font-size:14px}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:28px}
+.tile{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.info{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:26px 22px;text-align:center}
+.info p{color:var(--muted)}
+.info b{color:var(--gold);font-weight:600}
+.band{border:1px solid var(--gold);background:linear-gradient(180deg,#171309,#0c0a05);border-radius:22px;padding:44px 22px;text-align:center;margin:52px 0 48px}
+.band p{color:var(--muted);margin-bottom:22px}
+footer{border-top:1px solid var(--border);padding:22px 0;color:var(--muted);font-size:14px;text-align:center}
+.sticky{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:10;box-shadow:0 6px 24px rgba(0,0,0,.6)}
+@media (min-width:720px){.sticky{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<nav><div class="logo">ROYAL CUTS</div><a class="btn" id="topBook" href="#">Book us</a></nav>
+<div class="hero">
+<div class="tag">Barbershop · Abakaliki</div>
+<h1>Fresh cuts.<br><span>Royal finish.</span></h1>
+<p>Skilled barbers, clean tools and a relaxed shop. Book your slot in seconds on WhatsApp.</p>
+<div class="cta"><a class="btn" id="heroBook" href="#">Book us</a><a class="btn ghost" id="heroCall" href="#">Call us</a></div>
+</div>
+</div>
+</header>
+<div class="wrap">
+<section class="block" id="services">
+<h2>What we do</h2>
+<p class="sub">Services we offer</p>
+<div class="list" id="serviceList"></div>
+</section>
+<section class="block">
+<h2>Our work</h2>
+<p class="sub">Real cuts from our chair</p>
+<div class="gallery" id="gallery"></div>
+<div class="cta"><a class="btn" id="workBook" href="#">Book us</a><a class="btn ghost" id="workCall" href="#">Call us</a></div>
+</section>
+<section class="block">
+<div class="info">
+<p><b>Open:</b> Monday to Saturday, 8:00 AM to 8:00 PM</p>
+<p><b>Address:</b>  Ogoja Road, Abakaliki, Ebonyi State</p>
+</div>
+</section>
+<section class="band">
+<h2>Ready for a fresh look?</h2>
+<p>Pick your time and we’ll confirm on WhatsApp.</p>
+<div class="cta"><a class="btn" id="bandBook" href="#">Book now</a><a class="btn ghost" id="bandCall" href="#">Call us</a></div>
+</section>
+</div>
+<footer>© 2026 Royal Cuts Barbershop. All rights reserved.</footer>
+<a class="btn sticky" id="stickyBook" href="#">Book us</a>
+<script>
+var PHONE="2349169873864";
+var services=[
+{name:"Classic Haircut",desc:"Clean cut with sharp edges."},
+{name:"Fade & Style",desc:"Skin, low, mid or high fade."},
+{name:"Haircut & Beard Trim",desc:"Full cut with a shaped beard."},
+{name:"Kids Cut",desc:"Gentle cuts for boys under."},
+{name:"Hair Dye / Colour",desc:"Black, brown or bold colours."},
+{name:"Home Service",desc:"We come to you. Booking required."}
+];
+var work=["work1.jpg","work2.jpg","work3.jpg","work4.jpg","work5.jpg","work6.jpg"];
+function wa(text){return"https://wa.me/"+PHONE+"?text="+encodeURIComponent(text)}
+document.getElementById("serviceList").innerHTML=services.map(function(s){
+return'<div class="row"><div><h3>'+s.name+'</h3><p>'+s.desc+'</p></div></div>';
+}).join("");
+document.getElementById("gallery").innerHTML=work.map(function(f,i){
+return'<div class="tile">Photo '+(i+1)+'<img src="'+f+'" alt="Haircut by Royal Cuts" onerror="this.remove()"></div>';
+}).join("");
+var book=wa("Hi Royal Cuts, I’d like to book a haircut.");
+["topBook","heroBook","workBook","bandBook","stickyBook"].forEach(function(id){document.getElementById(id).href=book});
+["heroCall","workCall","bandCall"].forEach(function(id){document.getElementById(id).href="tel:+"+PHONE});
+</script>
+</body>
+</html>
